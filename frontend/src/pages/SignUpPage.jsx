@@ -69,8 +69,10 @@ const SignUpPage = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Full Name</span>
-              </label>
+            <span className="text-cyan-400 font-semibold tracking-wide">
+           Full Name
+          </span>
+         </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <User className="size-5 text-base-content/40" />
@@ -86,9 +88,11 @@ const SignUpPage = () => {
             </div>
 
             <div className="form-control">
-              <label className="label">
-                <span className="label-text font-medium">Email</span>
-              </label>
+            <label className="label">
+            <span className="text-cyan-400 font-semibold tracking-wide">
+             Email
+            </span>
+            </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <Mail className="size-5 text-base-content/40" />
@@ -105,15 +109,17 @@ const SignUpPage = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Password</span>
-              </label>
+             <span className="text-cyan-400 font-semibold tracking-wide">
+             Password
+            </span>
+            </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <Lock className="size-5 text-base-content/40" />
                 </div>
                 <input
                   type={showPassword ? "text" : "password"}
-                  className={`input input-bordered w-full pl-10`}
+                  className="w-full rounded-xl border border-slate-700 bg-slate-800/60 pl-10 py-3 text-white placeholder:text-slate-400 focus:border-cyan-500 focus:outline-none"
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -132,7 +138,11 @@ const SignUpPage = () => {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-primary w-full" disabled={isSigningUp}>
+            <button
+            type="submit"
+            disabled={isSigningUp}
+            className="w-full rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-cyan-500/30 disabled:opacity-50"
+            >
               {isSigningUp ? (
                 <>
                   <Loader2 className="size-5 animate-spin" />
